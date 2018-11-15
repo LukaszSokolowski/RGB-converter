@@ -11,11 +11,24 @@ import UIKit
 class ResultsViewController: UIViewController {
 
     @IBOutlet weak var rLabel: UILabel!
+    @IBOutlet weak var gLabel: UILabel!
+    @IBOutlet weak var bLabel: UILabel!
+    
+    @IBOutlet weak var rValueLabel: UILabel!
+    @IBOutlet weak var gValueLabel: UILabel!
+    @IBOutlet weak var bValueLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        rLabel.text = "Siemma"
+        setStaticLabels()
+        
     }
     
+    func setStaticLabels() {
+        rLabel.text = "R:"
+        gLabel.text = "G:"
+        bLabel.text = "B:"
+    }
 
     /*
     // MARK: - Navigation

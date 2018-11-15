@@ -38,9 +38,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         setConvertButton()
     }
     override func viewWillAppear(_ animated: Bool) {
-      
     }
-    
     
     @IBAction func redTextFieldAction(_ redField: UITextField) {
         if let redValue: Int = Int(redField.text!)
@@ -88,7 +86,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //gradient.colors = [UIColor.red.cgColor, UIColor.blue.cgColor] // Line 3
         //backgroundView.layer.addSublayer(gradient) // Line 4
     }
-    
     func setTextView() {
         redTextFieldInput.keyboardType = .numberPad
         redTextFieldInput.font = UIFont(name: "Verdana", size: 30)
@@ -99,9 +96,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         blueTextFieldInput.keyboardType = .numberPad
         blueTextFieldInput.font = UIFont(name: "Verdana", size: 30)
     }
-    
     func setConvertButton() {
-       convertButton.setTitle("Konwertuj", for: .normal)
+        convertButton.setTitle("Konwertuj", for: .normal)
         convertButton.titleLabel?.font = UIFont(name: "HelveticaNeue-UltraLight", size: 50)
         convertButton.setTitleColor(.black, for: .normal)
         convertButton.setTitleShadowColor(.red, for: .normal)
