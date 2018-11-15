@@ -48,7 +48,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         if let redUserValue: Int = Int(redField.text!)
         {
             redValueToPass = redUserValue
-            print("\(greenValueToPass)")
+            print("\(redValueToPass)")
         }
     }
     @IBAction func greenTextFieldAction(_ greenField: UITextField) {

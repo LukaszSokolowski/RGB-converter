@@ -25,9 +25,10 @@ class ResultsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setStaticLabels()
-        bValueLabel.text = String(blueValue)
+      
         rValueLabel.text = String(redValue)
         gValueLabel.text = String(greenValue)
+        bValueLabel.text = String(blueValue)
        
     }
     
