@@ -26,6 +26,8 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var greenLabel: UILabel!
     @IBOutlet weak var blueLabel: UILabel!
     
+    @IBOutlet weak var validateLabel: UILabel!
+    
     @IBOutlet weak var convertButton: UIButton!
     
     override func viewDidLoad() {
@@ -38,46 +40,31 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         setInfoLabel()
         setAllFonts()
         setBackgroundView()
-        setTextView()
+        setTextField()
         setConvertButton()
+        
+        validateLabel.isHidden = true
     }
     override func viewWillAppear(_ animated: Bool) {
     }
     
-    @IBAction func redTextFieldAction(_ redField: UITextField) {
-        if let redUserValue: Int = Int(redField.text!)
-        {
-            redValueToPass = redUserValue
-            print("\(redValueToPass)")
-        }
-    }
-    @IBAction func greenTextFieldAction(_ greenField: UITextField) {
-        if let greenUserValue: Int = Int(greenField.text!)
-        {
-            greenValueToPass = greenUserValue
-            print("\(greenValueToPass)")
-        }
-    }
-    @IBAction func blueTextFieldAction(_ blueField: UITextField) {
-        if let blueUserValue: Int = Int(blueField.text!)
-        {
-            blueValueToPass = blueUserValue
-            print("\(blueValueToPass)")
-        }
-    }
-    
     @IBAction func convertButtonPressed(_ sender: Any) {
-       self.performSegue(withIdentifier: "segueToNext", sender: self)
+        
+        if (redTextFieldInput.text?.isEmpty)! || (greenTextFieldInput.text?.isEmpty)! || (blueTextFieldInput.text?.isEmpty)! {
+            showEmptyLabelAlert()
+        }
+        else {
+            self.performSegue(withIdentifier: "segueToNext", sender: self)
+        }
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToNext" {
-            if let destination = segue.destination as? ResultsViewController {
-                let secondVC = destination
-                secondVC.redValue = redValueToPass
-                secondVC.greenValue = greenValueToPass
-                secondVC.blueValue = blueValueToPass
+            if let secondVC = segue.destination as? ResultsViewController {
+                secondVC.redValue = Int(redTextFieldInput.text!)!
+                secondVC.greenValue = Int(greenTextFieldInput.text!)!
+                secondVC.blueValue = Int(blueTextFieldInput.text!)!
             }
         }
     }
@@ -112,7 +99,8 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         //gradient.colors = [UIColor.red.cgColor, UIColor.blue.cgColor] // Line 3
         //backgroundView.layer.addSublayer(gradient) // Line 4
     }
-    func setTextView() {
+    func setTextField() {
+        
         redTextFieldInput.keyboardType = .numberPad
         redTextFieldInput.font = UIFont(name: "Verdana", size: 30)
         
@@ -129,6 +117,14 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         convertButton.setTitleShadowColor(.red, for: .normal)
         convertButton.layer.borderWidth = 1;
         convertButton.layer.cornerRadius = 15;
+    }
+    func setValidateLabel() {
+        validateLabel.text = "Uzupełnij wszystkie pola!"
+        validateLabel.font = UIFont(name: "Futura-Medium", size: 20)
+    }
+    func showEmptyLabelAlert() {
+       setValidateLabel()
+       validateLabel.isHidden = false
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

@@ -63,9 +63,6 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="redTextFieldAction:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="AXm-OR-tT7"/>
-                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wMj-MP-Kpt">
                                 <rect key="frame" x="215" y="196" width="120" height="30"/>
@@ -76,9 +73,6 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="greenTextFieldAction:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="djD-o1-ras"/>
-                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y1l-K8-yOd">
                                 <rect key="frame" x="215" y="246" width="120" height="30"/>
@@ -89,9 +83,6 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="blueTextFieldAction:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="GhZ-2g-Nzx"/>
-                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2u-s4-jDS">
                                 <rect key="frame" x="40" y="539" width="295" height="91"/>
@@ -103,6 +94,13 @@
                                     <action selector="convertButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6ez-ko-Ml8"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9h-rJ-pI6">
+                                <rect key="frame" x="40" y="311" width="295" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -142,6 +140,7 @@
                         <outlet property="infoLabel" destination="F9h-Of-fhh" id="rVQ-Ne-SHx"/>
                         <outlet property="redLabel" destination="qJU-A2-cqv" id="HQe-Ok-pM2"/>
                         <outlet property="redTextFieldInput" destination="gX5-9z-Twr" id="AOX-Ug-Ben"/>
+                        <outlet property="validateLabel" destination="H9h-rJ-pI6" id="Oiy-S0-Mdo"/>
                         <segue destination="EW1-yE-Plu" kind="show" identifier="segueToNext" id="3UW-nV-Zb1"/>
                     </connections>
                 </viewController>
