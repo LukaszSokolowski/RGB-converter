@@ -82,6 +82,9 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
     func setAllFonts() {
          redLabel.font = UIFont(name: "HelveticaNeue-UltraLight", size: 30)
@@ -132,6 +135,11 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         guard let text = textField.text else { return true }
         let count = text.count + string.count - range.length
         return count <= 3
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
     }
    
 }
