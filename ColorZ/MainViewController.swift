@@ -8,8 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class MainViewController: UIViewController, UITextFieldDelegate {
 
+    var redValueToPass:   Int = 0
+    var greenValueToPass: Int = 0
+    var blueValueToPass:  Int = 0
+    
     @IBOutlet var backgroundView: UIView!
     
     @IBOutlet weak var infoLabel: UILabel!
@@ -41,21 +45,40 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func redTextFieldAction(_ redField: UITextField) {
-        if let redValue: Int = Int(redField.text!)
+        if let redUserValue: Int = Int(redField.text!)
         {
-            print("\(redValue)")
+            redValueToPass = redUserValue
+            print("\(greenValueToPass)")
         }
     }
     @IBAction func greenTextFieldAction(_ greenField: UITextField) {
-        if let greenValue: Int = Int(greenField.text!)
+        if let greenUserValue: Int = Int(greenField.text!)
         {
-            print("\(greenValue)")
+            greenValueToPass = greenUserValue
+            print("\(greenValueToPass)")
         }
     }
     @IBAction func blueTextFieldAction(_ blueField: UITextField) {
-        if let blueValue: Int = Int(blueField.text!)
+        if let blueUserValue: Int = Int(blueField.text!)
         {
-            print("\(blueValue)")
+            blueValueToPass = blueUserValue
+            print("\(blueValueToPass)")
+        }
+    }
+    
+    @IBAction func convertButtonPressed(_ sender: Any) {
+       self.performSegue(withIdentifier: "segueToNext", sender: self)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToNext" {
+            if let destination = segue.destination as? ResultsViewController {
+                let secondVC = destination
+                secondVC.redValue = redValueToPass
+                secondVC.greenValue = greenValueToPass
+                secondVC.blueValue = blueValueToPass
+            }
         }
     }
     

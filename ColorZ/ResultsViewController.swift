@@ -10,6 +10,10 @@ import UIKit
 
 class ResultsViewController: UIViewController {
 
+    var redValue:   Int = 0
+    var greenValue: Int = 0
+    var blueValue:  Int = 0
+    
     @IBOutlet weak var rLabel: UILabel!
     @IBOutlet weak var gLabel: UILabel!
     @IBOutlet weak var bLabel: UILabel!
@@ -21,7 +25,10 @@ class ResultsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setStaticLabels()
-        
+        bValueLabel.text = String(blueValue)
+        rValueLabel.text = String(redValue)
+        gValueLabel.text = String(greenValue)
+       
     }
     
     func setStaticLabels() {
