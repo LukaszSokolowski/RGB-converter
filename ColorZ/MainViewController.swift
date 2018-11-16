@@ -54,6 +54,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             showEmptyLabelAlert()
         }
         else {
+            validateLabel.isHidden = true
             self.performSegue(withIdentifier: "segueToNext", sender: self)
         }
     }
