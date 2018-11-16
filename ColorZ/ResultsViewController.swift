@@ -38,8 +38,16 @@ class ResultsViewController: UIViewController {
         rgb2cmyk(red: redValue, green: greenValue, blue: blueValue)
         paintColorPreview()
         setHexLabel()
+        
+        var tablica = rgb2hsv(red: Float(redValue), grn: Float(greenValue), blu: Float(blueValue))
+        print(tablica)
     }
 
+    
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     func setStaticLabels() {
         rLabel.text = "R:"
         gLabel.text = "G:"
@@ -52,16 +60,16 @@ class ResultsViewController: UIViewController {
         bValueLabel.text = String(blueValue)
     }
     func setHexLabel() {
-        hexLabel.text = rgb2hex()
+        hexLabel.text = "#" + rgb2hex()
     }
     func paintColorPreview() {
        
         let red = CGFloat(CGFloat(redValue)/255)
-        print(red)
+        //print(red)
         let green = CGFloat(CGFloat(greenValue)/255)
-        print(green)
+        //print(green)
         let blue = CGFloat(CGFloat(blueValue)/255)
-        print(blue)
+        //print(blue)
         
         colorPreView.layer.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: 1).cgColor
         
@@ -89,4 +97,35 @@ class ResultsViewController: UIViewController {
         let hex = String(format:"%02X", Int(redValue)) + String(format:"%02X", Int(greenValue)) + String(format:"%02X", Int(blueValue))
         return hex
     }
+    
+   
+    func rgb2hsv(red: Float, grn: Float, blu: Float) -> [Float] {
+        var hue: Float
+        var sat: Float
+        var val: Float
+        var x: Float
+        var f: Float
+        var i: Float
+        var result: [Float] = [0,0,0]
+    
+        x = min(red, grn, blu)
+        val = max(red, grn, blu)
+        
+        if  x == val {
+            hue = 0;
+            sat = 0;
+        }
+        else {
+            f = (red == x) ? grn-blu : ((grn == x) ? blu-red : red-grn)
+            i = (red == x) ? 3 : ((grn == x) ? 5 : 1)
+            hue = ((i-f/(val-x))*60).truncatingRemainder(dividingBy: Float(360))
+            sat = ((val-x)/val)
+        }
+        result[0] = hue
+        result[1] = sat
+        result[2] = val/255
+        return result
+        
+    }
 }
+

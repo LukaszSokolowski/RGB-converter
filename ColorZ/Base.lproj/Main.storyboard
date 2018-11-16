@@ -261,13 +261,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TR1-VJ-UHg">
-                                <rect key="frame" x="85" y="201" width="71" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HSL:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXY-NN-KdU">
                                 <rect key="frame" x="31" y="473" width="37" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -378,6 +371,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iey-IF-B9m">
+                                <rect key="frame" x="30" y="31" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Powrót"/>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="EW1-yE-Plu" eventType="touchUpInside" id="03Z-zI-KIA"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TR1-VJ-UHg">
+                                <rect key="frame" x="77" y="201" width="83" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ox4-zA-2gP"/>
@@ -388,7 +396,7 @@
                         <outlet property="colorPreView" destination="ryh-XD-6b4" id="NQ4-Ob-fDW"/>
                         <outlet property="gLabel" destination="aEM-lr-5rD" id="NLT-ml-i1P"/>
                         <outlet property="gValueLabel" destination="xfX-ZZ-qIf" id="Rtu-Ah-vkQ"/>
-                        <outlet property="hexLabel" destination="TR1-VJ-UHg" id="Gj3-gJ-JbZ"/>
+                        <outlet property="hexLabel" destination="TR1-VJ-UHg" id="tYC-Y8-fJz"/>
                         <outlet property="labelC" destination="HE5-Ng-nmh" id="QR3-ij-kuV"/>
                         <outlet property="labelK" destination="xZ8-Zb-yre" id="J2N-Hw-PED"/>
                         <outlet property="labelM" destination="Q4k-E6-mZP" id="AUC-JX-HT3"/>

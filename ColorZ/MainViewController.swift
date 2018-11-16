@@ -49,7 +49,6 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func convertButtonPressed(_ sender: Any) {
-        
         if (redTextFieldInput.text?.isEmpty)! || (greenTextFieldInput.text?.isEmpty)! || (blueTextFieldInput.text?.isEmpty)! {
             showEmptyLabelAlert()
         }
@@ -58,7 +57,6 @@ class MainViewController: UIViewController, UITextFieldDelegate {
             self.performSegue(withIdentifier: "segueToNext", sender: self)
         }
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToNext" {
