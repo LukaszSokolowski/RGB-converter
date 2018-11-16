@@ -388,6 +388,7 @@
                         <outlet property="colorPreView" destination="ryh-XD-6b4" id="NQ4-Ob-fDW"/>
                         <outlet property="gLabel" destination="aEM-lr-5rD" id="NLT-ml-i1P"/>
                         <outlet property="gValueLabel" destination="xfX-ZZ-qIf" id="Rtu-Ah-vkQ"/>
+                        <outlet property="hexLabel" destination="TR1-VJ-UHg" id="Gj3-gJ-JbZ"/>
                         <outlet property="labelC" destination="HE5-Ng-nmh" id="QR3-ij-kuV"/>
                         <outlet property="labelK" destination="xZ8-Zb-yre" id="J2N-Hw-PED"/>
                         <outlet property="labelM" destination="Q4k-E6-mZP" id="AUC-JX-HT3"/>

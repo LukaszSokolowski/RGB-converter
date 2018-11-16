@@ -29,12 +29,15 @@ class ResultsViewController: UIViewController {
     
     @IBOutlet weak var colorPreView: UIView!
     
+    @IBOutlet weak var hexLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setStaticLabels()
         setRGBLabels()
         rgb2cmyk(red: redValue, green: greenValue, blue: blueValue)
         paintColorPreview()
+        setHexLabel()
     }
 
     func setStaticLabels() {
@@ -48,6 +51,9 @@ class ResultsViewController: UIViewController {
         gValueLabel.text = String(greenValue)
         bValueLabel.text = String(blueValue)
     }
+    func setHexLabel() {
+        hexLabel.text = rgb2hex()
+    }
     func paintColorPreview() {
        
         let red = CGFloat(CGFloat(redValue)/255)
@@ -58,6 +64,8 @@ class ResultsViewController: UIViewController {
         print(blue)
         
         colorPreView.layer.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: 1).cgColor
+        
+        colorPreView.layer.borderWidth = 2
     }
     func rgb2cmyk(red: Int,green: Int, blue: Int) {
         let redNew = Float(Float(red)/255)
@@ -75,5 +83,10 @@ class ResultsViewController: UIViewController {
         labelM.text = String(M)
         labelY.text = String(Y)
         labelK.text = String(K)
+    }
+    
+    func rgb2hex() -> String {
+        let hex = String(format:"%02X", Int(redValue)) + String(format:"%02X", Int(greenValue)) + String(format:"%02X", Int(blueValue))
+        return hex
     }
 }
