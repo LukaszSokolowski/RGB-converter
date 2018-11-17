@@ -9,10 +9,6 @@
 import UIKit
 
 class MainViewController: UIViewController, UITextFieldDelegate {
-
-    var redValueToPass:   Int = 0
-    var greenValueToPass: Int = 0
-    var blueValueToPass:  Int = 0
     
     @IBOutlet var backgroundView: UIView!
     
