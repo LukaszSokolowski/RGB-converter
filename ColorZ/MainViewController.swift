@@ -91,12 +91,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     func setBackgroundView() {
         backgroundView.layer.cornerRadius = CGFloat(15);
         backgroundView.layer.backgroundColor = UIColor(red: 1, green: 0.9333, blue: 0.6196, alpha: 1.0).cgColor
-        
-        //Czemu to przykrywa muj widog
-        //let gradient = CAGradientLayer() // Line 1
-        //gradient.frame = backgroundView.bounds // Line 2
-        //gradient.colors = [UIColor.red.cgColor, UIColor.blue.cgColor] // Line 3
-        //backgroundView.layer.addSublayer(gradient) // Line 4
+    
     }
     func setTextField() {
         
