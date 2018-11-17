@@ -22,14 +22,30 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var gValueLabel: UILabel!
     @IBOutlet weak var bValueLabel: UILabel!
     
-    @IBOutlet weak var labelC: UILabel!
-    @IBOutlet weak var labelM: UILabel!
-    @IBOutlet weak var labelY: UILabel!
-    @IBOutlet weak var labelK: UILabel!
-    
     @IBOutlet weak var colorPreView: UIView!
     
     @IBOutlet weak var hexLabel: UILabel!
+    @IBOutlet weak var hexLabelDescription: UILabel!
+ 
+    @IBOutlet var resultBackgroundView: UIView!
+    
+    @IBOutlet weak var backButton: UIButton!
+    
+    @IBOutlet weak var cmykDescriptionLabel: UILabel!
+    @IBOutlet weak var cDescriptionLabel: UILabel!
+    @IBOutlet weak var mDescriptionLabel: UILabel!
+    @IBOutlet weak var yDescriptionLabel: UILabel!
+    @IBOutlet weak var kDescriptionLabel: UILabel!
+    
+    @IBOutlet weak var cValueLabel: UILabel!
+    @IBOutlet weak var mValueLabel: UILabel!
+    @IBOutlet weak var yValueLabel: UILabel!
+    @IBOutlet weak var kValueLabel: UILabel!
+    
+    @IBOutlet weak var hsvLabelDescription: UILabel!
+    @IBOutlet weak var hLabelDescriptionHsv: UILabel!
+    @IBOutlet weak var sLabelDescriptionHsv: UILabel!
+    @IBOutlet weak var vLabelDescriptionHsv: UILabel!
     
     @IBOutlet weak var hLabelFromHsv: UILabel!
     @IBOutlet weak var sLabelFromHsv: UILabel!
@@ -39,19 +55,27 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var sLabelFromHsl: UILabel!
     @IBOutlet weak var lLabelFromHsl: UILabel!
     
+    @IBOutlet weak var hslLabelDescription: UILabel!
+    @IBOutlet weak var hLabelDescriptionHsl: UILabel!
+    @IBOutlet weak var sLabelDescriptionHsl: UILabel!
+    @IBOutlet weak var lLabelDescriptionHsl: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setStaticLabels()
         setRGBLabels()
-        rgb2cmyk(red: redValue, green: greenValue, blue: blueValue)
-        paintColorPreview()
+        setBackground()
+        setCmykLabels()
+        setBackButton()
         setHexLabel()
+        setHslLabels()
+        setHsvLabels()
+        rgb2cmyk()
+        paintColorPreview()
         rgb2hsl()
         rgb2hsv()
-     
     }
-
     
     @IBAction func backButtonPressed(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
@@ -61,33 +85,84 @@ class ResultsViewController: UIViewController {
         rLabel.text = "R:"
         gLabel.text = "G:"
         bLabel.text = "B:"
+        
+        rLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18)
+        gLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18)
+        bLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18)
+    }
+    func setBackButton() {
+        backButton.titleLabel?.font = UIFont(name: "AppleSDGothicNeo-Boldq", size: 25)
+        backButton.layer.borderWidth = 1
+        backButton.layer.cornerRadius = 7
     }
     func setRGBLabels() {
         
         rValueLabel.text = String(redValue)
         gValueLabel.text = String(greenValue)
         bValueLabel.text = String(blueValue)
+        
+        rValueLabel.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 18)
+        gValueLabel.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 18)
+        bValueLabel.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 18)
     }
     func setHexLabel() {
         hexLabel.text = "#" + rgb2hex()
+        hexLabel.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 18)
+        hexLabelDescription.text = "HEX:"
+        hexLabelDescription.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18)
     }
     func paintColorPreview() {
-       
         let red = CGFloat(CGFloat(redValue)/255)
-        //print(red)
         let green = CGFloat(CGFloat(greenValue)/255)
-        //print(green)
         let blue = CGFloat(CGFloat(blueValue)/255)
-        //print(blue)
-        
+ 
         colorPreView.layer.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: 1).cgColor
-        
         colorPreView.layer.borderWidth = 2
+        colorPreView.layer.cornerRadius = 15;
     }
-    func rgb2cmyk(red: Int,green: Int, blue: Int) {
-        let redNew = Float(Float(red)/255)
-        let greenNew = Float(Float(green)/255)
-        let blueNew = Float(Float(blue)/255)
+    func setBackground() {
+        resultBackgroundView.layer.cornerRadius = CGFloat(15);
+        resultBackgroundView.layer.backgroundColor = UIColor(red: 1, green: 0.9333, blue: 0.6196, alpha: 1.0).cgColor
+    }
+    func setCmykLabels() {
+        cmykDescriptionLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18)
+        
+        cDescriptionLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18)
+        mDescriptionLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18)
+        yDescriptionLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18)
+        kDescriptionLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18)
+        
+        cValueLabel.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 18)
+        mValueLabel.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 18)
+        yValueLabel.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 18)
+        kValueLabel.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 18)
+    }
+    func setHsvLabels() {
+        hsvLabelDescription.font =  UIFont(name: "AppleSDGothicNeo-Bold", size: 18)
+        
+        hLabelDescriptionHsv.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 18)
+        sLabelDescriptionHsv.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 18)
+        vLabelDescriptionHsv.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 18)
+        
+        hLabelFromHsv.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 18)
+        sLabelFromHsv.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 18)
+        vLabelFromHsv.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 18)
+    }
+    func setHslLabels() {
+        hLabelFromHsl.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 18)
+        sLabelFromHsl.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 18)
+        lLabelFromHsl.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 18)
+        
+        hslLabelDescription.font =  UIFont(name: "AppleSDGothicNeo-Bold", size: 18)
+        
+        hLabelDescriptionHsl.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18)
+        sLabelDescriptionHsl.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18)
+        lLabelDescriptionHsl.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 18)
+    }
+    func rgb2cmyk() {
+        let redNew = Float(Float(redValue)/255)
+        let greenNew = Float(Float(greenValue)/255)
+        let blueNew = Float(Float(blueValue)/255)
         
         let maxValueOfRGB = max(redNew, greenNew, blueNew)
         
@@ -96,46 +171,43 @@ class ResultsViewController: UIViewController {
         let M = (1 - greenNew - K)/(1 - K)
         let Y = (1 - blueNew - K)/(1 - K)
         
-        labelC.text = String(C)
-        labelM.text = String(M)
-        labelY.text = String(Y)
-        labelK.text = String(K)
+        cValueLabel.text = String(format: "%.3f",C)
+        mValueLabel.text = String(format: "%.3f",M)
+        yValueLabel.text = String(format: "%.3f",Y)
+        kValueLabel.text = String(format: "%.3f",K)
     }
     
     func rgb2hex() -> String {
         let hex = String(format:"%02X", Int(redValue)) + String(format:"%02X", Int(greenValue)) + String(format:"%02X", Int(blueValue))
         return hex
     }
-    
-   
     func rgb2hsv() {
-        var red = Float(redValue)
-        var grn = Float(greenValue)
-        var blu = Float(blueValue)
+        let red = Float(redValue)
+        let green = Float(greenValue)
+        let blue = Float(blueValue)
         
         var hue: Float
-        var sat: Float
-        var val: Float
+        var saturation: Float
+        var value: Float
         var x: Float
         var f: Float
         var i: Float
-        x = min(red, grn, blu)
-        val = max(red, grn, blu)
+        x = min(red, green, blue)
+        value = max(red, green, blue)
         
-        if  x == val {
+        if  x == value {
             hue = 0;
-            sat = 0;
+            saturation = 0;
         }
         else {
-            f = (red == x) ? grn-blu : ((grn == x) ? blu-red : red-grn)
-            i = (red == x) ? 3 : ((grn == x) ? 5 : 1)
-            hue = ((i-f/(val-x))*60).truncatingRemainder(dividingBy: Float(360))
-            sat = ((val-x)/val)
+            f = (red == x) ? green-blue : ((green == x) ? blue-red : red-green)
+            i = (red == x) ? 3 : ((green == x) ? 5 : 1)
+            hue = ((i-f/(value-x))*60).truncatingRemainder(dividingBy: Float(360))
+            saturation = ((value-x)/value)
         }
-        hLabelFromHsv.text = String(hue)
-        sLabelFromHsv.text = String(sat)
-        vLabelFromHsv.text = String(val/255)
-     
+        hLabelFromHsv.text = String(format: "%.3f", hue)
+        sLabelFromHsv.text = String(format: "%.4f", saturation)
+        vLabelFromHsv.text = String(format: "%.4f",value/255)
     }
     
     func rgb2hsl() {
@@ -172,8 +244,6 @@ class ResultsViewController: UIViewController {
         hLabelFromHsl.text = String(Int(hue * 60))
         sLabelFromHsl.text = String(Int(saturation * 100))
         lLabelFromHsl.text = String(Int(lightness * 100))
-    
-        
     }
   
 }

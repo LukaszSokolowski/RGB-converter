@@ -18,24 +18,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUx-r8-tHU">
-                                <rect key="frame" x="155.5" y="304.5" width="64" height="58"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fuX-hU-LRf">
+                                <rect key="frame" x="150.5" y="296.5" width="74" height="74"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="74" id="TGs-xk-WUw"/>
+                                    <constraint firstAttribute="height" constant="74" id="cTi-GN-m5N"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hay-Hg-5Dt">
+                                <rect key="frame" x="247" y="296.5" width="74" height="74"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="74" id="DuL-1M-M8L"/>
+                                    <constraint firstAttribute="height" constant="74" id="zqc-7d-rg8"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n82-ep-MQp">
+                                <rect key="frame" x="54" y="296.5" width="74" height="74"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="74" id="PcO-w2-UtI"/>
+                                    <constraint firstAttribute="height" constant="74" id="e0t-st-6na"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.87418519938650308" blue="0.59959739263803669" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="TUx-r8-tHU" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="goz-GE-0rE"/>
-                            <constraint firstItem="TUx-r8-tHU" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="mqM-h3-FkQ"/>
+                            <constraint firstItem="n82-ep-MQp" firstAttribute="top" secondItem="Hay-Hg-5Dt" secondAttribute="top" id="2A5-lf-u8P"/>
+                            <constraint firstItem="n82-ep-MQp" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="32m-Nz-D3b"/>
+                            <constraint firstItem="fuX-hU-LRf" firstAttribute="leading" secondItem="n82-ep-MQp" secondAttribute="trailing" constant="22.5" id="DC5-IW-bQq"/>
+                            <constraint firstItem="Hay-Hg-5Dt" firstAttribute="leading" secondItem="fuX-hU-LRf" secondAttribute="trailing" constant="22.5" id="ELf-i1-0Od"/>
+                            <constraint firstItem="fuX-hU-LRf" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="PyZ-aF-IID"/>
+                            <constraint firstItem="fuX-hU-LRf" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="sOy-dc-mWY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
 </document>
