@@ -330,35 +330,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTM-UR-cea">
-                                <rect key="frame" x="129" y="427" width="42" height="21"/>
+                                <rect key="frame" x="160" y="426" width="63" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="S:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMe-ln-8jl">
-                                <rect key="frame" x="105" y="427" width="16" height="21"/>
+                                <rect key="frame" x="136" y="426" width="16" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wt8-e4-myR">
-                                <rect key="frame" x="55" y="427" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="V:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stV-Gt-PyR">
-                                <rect key="frame" x="179" y="427" width="15" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ub-5J-VQ7">
-                                <rect key="frame" x="202" y="427" width="46" height="21"/>
+                                <rect key="frame" x="55" y="427" width="63" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -386,6 +372,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="V:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stV-Gt-PyR">
+                                <rect key="frame" x="239" y="427" width="15" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ub-5J-VQ7">
+                                <rect key="frame" x="262" y="427" width="73" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ox4-zA-2gP"/>
@@ -396,13 +396,19 @@
                         <outlet property="colorPreView" destination="ryh-XD-6b4" id="NQ4-Ob-fDW"/>
                         <outlet property="gLabel" destination="aEM-lr-5rD" id="NLT-ml-i1P"/>
                         <outlet property="gValueLabel" destination="xfX-ZZ-qIf" id="Rtu-Ah-vkQ"/>
+                        <outlet property="hLabelFromHsl" destination="ENL-VI-COv" id="xCU-su-YRY"/>
+                        <outlet property="hLabelFromHsv" destination="wt8-e4-myR" id="mdb-7t-mob"/>
                         <outlet property="hexLabel" destination="TR1-VJ-UHg" id="tYC-Y8-fJz"/>
+                        <outlet property="lLabelFromHsl" destination="ggJ-5F-qAr" id="UkW-k8-egC"/>
                         <outlet property="labelC" destination="HE5-Ng-nmh" id="QR3-ij-kuV"/>
                         <outlet property="labelK" destination="xZ8-Zb-yre" id="J2N-Hw-PED"/>
                         <outlet property="labelM" destination="Q4k-E6-mZP" id="AUC-JX-HT3"/>
                         <outlet property="labelY" destination="OqE-0d-7Us" id="5lB-GY-Plq"/>
                         <outlet property="rLabel" destination="qEB-2S-cyI" id="7OX-Yo-A5c"/>
                         <outlet property="rValueLabel" destination="Rhe-9c-qXy" id="kv7-do-QAW"/>
+                        <outlet property="sLabelFromHsl" destination="Yns-NF-Rpt" id="uEQ-NE-V1t"/>
+                        <outlet property="sLabelFromHsv" destination="fTM-UR-cea" id="5pG-z7-uAM"/>
+                        <outlet property="vLabelFromHsv" destination="1Ub-5J-VQ7" id="8gX-ek-WuP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PPn-9B-ER4" userLabel="First Responder" sceneMemberID="firstResponder"/>
