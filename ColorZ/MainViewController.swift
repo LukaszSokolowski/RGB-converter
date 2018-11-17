@@ -34,8 +34,6 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         setBackgroundView()
         setTextField()
         setConvertButton()
-        
-        validateLabel.isHidden = true
     }
     override func viewWillAppear(_ animated: Bool) {
     }
