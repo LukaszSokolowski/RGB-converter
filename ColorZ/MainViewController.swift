@@ -29,10 +29,6 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        redTextFieldInput.delegate = self
-        greenTextFieldInput.delegate = self
-        blueTextFieldInput.delegate = self
-        
         setInfoLabel()
         setAllFonts()
         setBackgroundView()
