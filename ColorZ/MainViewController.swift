@@ -9,10 +9,6 @@
 import UIKit
 
 class MainViewController: UIViewController, UITextFieldDelegate {
-
-    var redValueToPass:   Int = 0
-    var greenValueToPass: Int = 0
-    var blueValueToPass:  Int = 0
     
     @IBOutlet var backgroundView: UIView!
     
@@ -33,19 +29,10 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        redTextFieldInput.delegate = self
-        greenTextFieldInput.delegate = self
-        blueTextFieldInput.delegate = self
-        
         setInfoLabel()
         setAllFonts()
         setBackgroundView()
-        setTextField()
         setConvertButton()
-        
-        validateLabel.isHidden = true
-    }
-    override func viewWillAppear(_ animated: Bool) {
     }
     
     @IBAction func convertButtonPressed(_ sender: Any) {
@@ -93,17 +80,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         backgroundView.layer.backgroundColor = UIColor(red: 1, green: 0.9333, blue: 0.6196, alpha: 1.0).cgColor
     
     }
-    func setTextField() {
-        
-        redTextFieldInput.keyboardType = .numberPad
-        redTextFieldInput.font = UIFont(name: "Verdana", size: 30)
-        
-        greenTextFieldInput.keyboardType = .numberPad
-        greenTextFieldInput.font = UIFont(name: "Verdana", size: 30)
-        
-        blueTextFieldInput.keyboardType = .numberPad
-        blueTextFieldInput.font = UIFont(name: "Verdana", size: 30)
-    }
+
     func setConvertButton() {
         convertButton.setTitle("Konwertuj", for: .normal)
         convertButton.titleLabel?.font = UIFont(name: "HelveticaNeue-UltraLight", size: 50)
