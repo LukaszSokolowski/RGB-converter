@@ -35,8 +35,6 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         setTextField()
         setConvertButton()
     }
-    override func viewWillAppear(_ animated: Bool) {
-    }
     
     @IBAction func convertButtonPressed(_ sender: Any) {
         if (redTextFieldInput.text?.isEmpty)! || (greenTextFieldInput.text?.isEmpty)! || (blueTextFieldInput.text?.isEmpty)! {
