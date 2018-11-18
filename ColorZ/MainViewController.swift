@@ -32,7 +32,6 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         setInfoLabel()
         setAllFonts()
         setBackgroundView()
-        setTextField()
         setConvertButton()
     }
     
@@ -81,17 +80,7 @@ class MainViewController: UIViewController, UITextFieldDelegate {
         backgroundView.layer.backgroundColor = UIColor(red: 1, green: 0.9333, blue: 0.6196, alpha: 1.0).cgColor
     
     }
-    func setTextField() {
-        
-        redTextFieldInput.keyboardType = .numberPad
-        redTextFieldInput.font = UIFont(name: "Verdana", size: 30)
-        
-        greenTextFieldInput.keyboardType = .numberPad
-        greenTextFieldInput.font = UIFont(name: "Verdana", size: 30)
-        
-        blueTextFieldInput.keyboardType = .numberPad
-        blueTextFieldInput.font = UIFont(name: "Verdana", size: 30)
-    }
+
     func setConvertButton() {
         convertButton.setTitle("Konwertuj", for: .normal)
         convertButton.titleLabel?.font = UIFont(name: "HelveticaNeue-UltraLight", size: 50)
